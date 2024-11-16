@@ -78,7 +78,10 @@ export function ContactPage() {
           className="absolute inset-0 bg-gradient-to-r from-[#20BEB8] to-[#0F172A] opacity-[0.5]"
           aria-hidden="true"
         ></div>
-        <Container maxWidth="lg" className="relative">
+        <Container
+          maxWidth="lg"
+          className="relative flex flex-col items-center justify-center"
+        >
           <Typography variant="h2" className="text-center font-bold mb-4">
             We&apos;re here to help
           </Typography>
