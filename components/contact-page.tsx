@@ -54,7 +54,7 @@ export function ContactPage() {
               </Link>
               <Button
                 variant="contained"
-                className="bg-teal-500 hover:bg-teal-600"
+                className="!bg-teal-500 hover:bg-teal-600"
               >
                 Get Started
               </Button>
@@ -226,7 +226,7 @@ export function ContactPage() {
           <div className="flex justify-center gap-4">
             <Button
               variant="contained"
-              className="bg-[#000000] flex items-center gap-3"
+              className="!bg-[#000000] flex items-center gap-3"
             >
               <Image
                 src="assets/GooglePlaylogo.svg"
@@ -246,9 +246,8 @@ export function ContactPage() {
             </Button>
 
             <Button
-              type="submit"
               variant="contained"
-              className="bg-[#000000] flex items-center gap-3"
+              className="!bg-[#000000] flex items-center gap-3"
             >
               <Image
                 src="assets/Applelogo.svg"
