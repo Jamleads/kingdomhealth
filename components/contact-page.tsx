@@ -206,7 +206,10 @@ export function ContactPage() {
 
       {/* Join Our Journey */}
       <div className="bg-[#1CABA5] text-white py-20">
-        <Container maxWidth="lg">
+        <Container
+          maxWidth="lg"
+          className="flex flex-col items-center justify-center"
+        >
           <Typography variant="h3" className="text-center mb-4 font-bold">
             Join Our Journey
           </Typography>
