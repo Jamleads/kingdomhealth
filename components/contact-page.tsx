@@ -196,7 +196,7 @@ export function ContactPage() {
             <Button
               type="submit"
               variant="contained"
-              className="bg-teal-500 hover:bg-teal-600"
+              className="!bg-teal-500 hover:bg-teal-600"
             >
               Submit form
             </Button>
@@ -208,7 +208,7 @@ export function ContactPage() {
       <div className="bg-[#1CABA5] text-white py-20">
         <Container
           maxWidth="lg"
-          className="flex flex-col items-center justify-center"
+          className="flex flex-col items-center justify-center gap-5"
         >
           <Typography variant="h3" className="text-center mb-4 font-bold">
             Join Our Journey
