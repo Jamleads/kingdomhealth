@@ -5,6 +5,29 @@ import { impactData } from "@/lib/utils";
 import { Container } from "@mui/material";
 import Image from "next/image";
 
+const data = [
+  {
+    sub: "Patient First, Always",
+    main: "Every decision we make starts with one question: 'How does this benefit our patients?",
+  },
+  {
+    sub: "Quality Without Compromise",
+    main: "We maintain the highest standards in healthcare delivery, technology, and service",
+  },
+  {
+    sub: "Innovation with Purpose",
+    main: "We leverage technology not for its own sake, but to create meaningful healthcare solutions",
+  },
+  {
+    sub: "Accessibility for All",
+    main: "We're committed to making quality healthcare available to everyone, regardless of location or circumstance",
+  },
+  {
+    sub: "Trust & Security",
+    main: "We protect your health information with the same care we'd want for our own families",
+  },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -183,18 +206,14 @@ export default function AboutPage() {
                 <p className="text-[#0F172A] font-bold text-2xl">
                   The Principles That Drive Us
                 </p>
-                <p className="text-[#64748B] font-light mt-5">
-                  Patient First, Always Every decision we make starts with one
-                  question: 'How does this benefit our patients?' Quality
-                  Without Compromise We maintain the highest standards in
-                  healthcare delivery, technology, and service Innovation with
-                  Purpose We leverage technology not for its own sake, but to
-                  create meaningful healthcare solutions Accessibility for All
-                  We're committed to making quality healthcare available to
-                  everyone, regardless of location or circumstance Trust &
-                  Security We protect your health information with the same care
-                  we'd want for our own families.
-                </p>
+                <div>
+                  {data.map((item, idx) => (
+                    <p key={idx} className="text-[#64748B] font-light mt-5">
+                      <span className="text-[#20BEB8]">{item.sub}</span> <br />
+                      {item.main}
+                    </p>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
