@@ -61,7 +61,7 @@ export function Nav() {
               </Button>
             </nav>
 
-            <div>
+            <div className="md:hidden flex">
               {mobileNav ? (
                 <GrClose
                   className=" text-[#0F172A] font-bold text-4xl cursor-pointer"

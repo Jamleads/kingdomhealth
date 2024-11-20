@@ -10,14 +10,12 @@ export const cardData = [
     title: "Appointment Bookings",
     details:
       "Easily book appointments with specialists and manage your healthcare schedule.",
-    iconBg: "!bg-[#20BEB82E]",
     imageDir: "/assets/calendar-tick.svg",
   },
   {
     title: "Real-time virtual Consultations",
     details:
       "Connect with healthcare professionals for personalized consultations from the comfort of your home.",
-    iconBg: "!bg-[#E275502E]",
     imageDir: "/assets/Video_call.svg",
   },
   {

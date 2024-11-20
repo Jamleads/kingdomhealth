@@ -96,7 +96,7 @@ export default function Page() {
 
           <div className="grid md:grid-cols-3 grid-cols-1 gap-5 md:mt-20 mt-10">
             {cardData.map((item, index) => (
-              <Card key={index} {...item} />
+              <Card key={index} {...item} index={index} />
             ))}
           </div>
         </Container>
