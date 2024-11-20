@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap");
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -75,4 +77,43 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.protest-riot-regular {
+  font-family: "Protest Riot" !important;
+}
+.bg-blur {
+  box-shadow: 0px -5px 54px 0px #0000000d;
+  backdrop-filter: blur(38px);
+}
+.showcase_gradient {
+  background: linear-gradient(
+    to bottom right,
+    #203dbe 0%,
+    #20beb8 25%,
+    #be4820 50%,
+    #ffffff 100%
+  );
+  /* background: green; */
+}
+.showcase_gradient2 {
+  background: linear-gradient(
+    to bottom right,
+    #203dbe 8%,
+    #20beb8 8%,
+    #be4820 8%,
+    #ffffff 100%
+  );
+  /* background: green; */
+}
+
+.palm {
+  background-image: url(/assets/palm.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.hands {
+  background-image: url(/assets/hands.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
