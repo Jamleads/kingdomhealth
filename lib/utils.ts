@@ -66,3 +66,21 @@ export const card3Data = [
       "MediCare has been a game-changer for my healthcare routine. The virtual consultations and prescription delivery service have saved me so much time and hassle.",
   },
 ];
+export const impactData = [
+  {
+    count: "100,000+",
+    text: "Patient Consultations",
+  },
+  {
+    count: "1,000+",
+    text: "Healthcare Professionals",
+  },
+  {
+    count: "98%",
+    text: "Patient Satisfaction Rate",
+  },
+  {
+    count: "24/7",
+    text: "Healthcare Access",
+  },
+];

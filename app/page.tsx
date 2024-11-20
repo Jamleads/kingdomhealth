@@ -62,11 +62,11 @@ export default function Page() {
                 />
               </span>
 
-              <span className="absolute left-10 top-[25rem] bg-[#ffffffad] md:block hidden">
+              <span className="absolute left-14 top-[25rem] md:block hidden">
                 <Image
                   src="/assets/tooth.svg"
                   alt=""
-                  className=" rounded-lg"
+                  className=""
                   width={60}
                   height={40}
                 />
