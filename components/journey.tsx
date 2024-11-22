@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import Image from "next/image";
@@ -19,7 +20,7 @@ export function Journey() {
             className="text-center max-w-3xl mx-auto mb-8"
           >
             As we continue to grow and evolve, our commitment to improving
-            healthcare access remains unchanged. Whether you&apos;re a patient
+            healthcare access remains unchanged. Whether you're a patient
             seeking better healthcare solutions or a healthcare professional
             looking to expand your practice, we invite you to join us in shaping
             the future of healthcare.

@@ -159,7 +159,7 @@ export default function Page() {
         <Container maxWidth="lg" className="">
           <div className="md:flex items-center justify-between">
             <div className="md:pt-0 pt-10">
-              <p className="protest-riot-regular md:text-left text-center text-[32px] font-bold md:w-[400px]">
+              <p className="protest-riot-regular md:text-left text-[#0f172e] text-center text-[32px] font-bold md:w-[400px]">
                 Get the Care you need, Anytime, Anywhere
               </p>
               <p className="text-[#475569] md:text-left text-center font-light my-5">

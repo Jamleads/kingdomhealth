@@ -88,23 +88,11 @@ body {
 }
 .showcase_gradient {
   background: linear-gradient(
-    to bottom right,
-    #203dbe 0%,
-    #20beb8 25%,
-    #be4820 50%,
-    #ffffff 100%
+    99.2deg,
+    #eaf1f8 5.23%,
+    #e7eff9 45.07%,
+    #faf1ee 97.89%
   );
-  /* background: green; */
-}
-.showcase_gradient2 {
-  background: linear-gradient(
-    to bottom right,
-    #203dbe 8%,
-    #20beb8 8%,
-    #be4820 8%,
-    #ffffff 100%
-  );
-  /* background: green; */
 }
 
 .palm {

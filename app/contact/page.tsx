@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import Image from "next/image";
@@ -42,14 +43,14 @@ export default function ContactUSPage() {
             className="relative flex flex-col items-center justify-center"
           >
             <Typography variant="h2" className="text-center font-bold mb-4">
-              We&apos;re here to help
+              We're here to help
             </Typography>
             <Typography
               variant="subtitle1"
               className="text-center max-w-2xl mx-auto"
             >
-              For general inquiries or support related to Medicare&apos;s
-              services, please contact our dedicated customer support team.
+              For general inquiries or support related to Medicare's services,
+              please contact our dedicated customer support team.
             </Typography>
           </Container>
         </div>
