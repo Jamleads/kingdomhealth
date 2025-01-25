@@ -12,7 +12,7 @@ const Header = () => {
     >
         <div className='font-semibold text-2xl md:text-[25px] '>News & Insights</div>
         <p className='font-extralight max-sm:text-center max-w-[460px] md:pt-3'>
-        Stay informed with Medicare's blog - expert health tips, wellness advice, and patient stories designed to empower you and guide your healthcare journey.
+        Stay informed with Medicare&#39;s blog - expert health tips, wellness advice, and patient stories designed to empower you and guide your healthcare journey.
         </p>
     </Stack>
     </Container>
