@@ -48,6 +48,12 @@ export function Nav() {
                 About us
               </Link>
               <Link
+                href="/blog"
+                className="text-gray-600 hover:text-teal-600"
+              >
+                Blog
+              </Link>
+              <Link
                 href="/contact"
                 className="text-gray-600 hover:text-teal-600"
               >
@@ -100,6 +106,12 @@ export function Nav() {
               className="text-gray-600 hover:text-teal-600 text-lg cursor-pointer"
             >
               About us
+            </p>
+            <p
+              onClick={() => handleNavigation("/blog")}
+              className="text-gray-600 hover:text-teal-600 text-lg cursor-pointer"
+            >
+              Blog
             </p>
             <p
               onClick={() => handleNavigation("/contact")}
