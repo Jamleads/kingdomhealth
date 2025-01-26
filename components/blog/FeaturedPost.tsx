@@ -2,7 +2,7 @@ import React from 'react'
 import SearchBar from './SearchBar'
 import { Container } from '@mui/material'
 import Image from 'next/image'
-import Posts from './Posts'
+// import Posts from './Posts'
 
 const FeaturedPost = () => {
     return (
