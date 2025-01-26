@@ -3,7 +3,7 @@ import React from 'react'
 const Posts = () => {
     return (
         <div className='flex flex-col gap-4'>
-        hello
+        hello   fhnhtrhtrh
         
         </div>
     )
