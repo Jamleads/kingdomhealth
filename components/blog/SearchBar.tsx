@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useState } from "react"
-import { TextField, Select, MenuItem, FormControl, InputLabel } from "@mui/material"
+import { TextField, Select, MenuItem, FormControl, InputLabel, SelectChangeEvent } from "@mui/material"
 
 // Mock data for blog categories
 const blogCategories = ["Technology", "Travel", "Food", "Lifestyle", "Fashion", "Health"]
@@ -10,7 +10,7 @@ const blogCategories = ["Technology", "Travel", "Food", "Lifestyle", "Fashion", 
 const SearchBar: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("")
 
-  const handleCategoryChange = (event: any) => {
+  const handleCategoryChange = (event :  SelectChangeEvent ) => {
     setSelectedCategory(event.target.value as string)
   }
 
