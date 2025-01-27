@@ -7,7 +7,7 @@ import Link from "next/link"
 
 const LatestPost = () => {
   const [currentPage, setCurrentPage] = useState(1)
-  const postsPerPage = 3
+//   const postsPerPage = 3
   const totalPages = 3 // This would normally be calculated based on the total number of posts
 
   const posts = [

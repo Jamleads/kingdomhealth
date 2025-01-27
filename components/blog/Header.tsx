@@ -8,7 +8,7 @@ const Header = () => {
         News & Insights
       </Typography>
       <Typography variant="body1" className="font-extralight" sx={{ flex: { md: "0 0 67%" } }}>
-        Stay informed with Medicare's blog - expert health tips, wellness advice, and patient stories designed to
+        Stay informed with Medicare&apos;s blog - expert health tips, wellness advice, and patient stories designed to
         empower you and guide your healthcare journey.
       </Typography>
     </Stack>

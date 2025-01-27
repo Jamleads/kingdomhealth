@@ -22,7 +22,7 @@ const BlogCategory = () => {
             News & Insights
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600 }}>
-            Stay informed with Medicare's blog - expert health tips, wellness advice, and patient stories designed to
+            Stay informed with Medicare&apos;s blog - expert health tips, wellness advice, and patient stories designed to
             empower you and guide your healthcare journey.
           </Typography>
         </Stack>

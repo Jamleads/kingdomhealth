@@ -2,7 +2,7 @@
 import { IconButton as MuiIconButton } from "@mui/material"
 import { styled } from "@mui/material/styles"
 
-const IconButton = styled(MuiIconButton)(({ theme }) => ({
+const IconButton = styled(MuiIconButton)(({  }) => ({
   width: 40,
   height: 40,
   borderRadius: 20,
