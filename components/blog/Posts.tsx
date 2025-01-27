@@ -80,7 +80,7 @@ const Posts = () => {
 
             <Box className="my-8 p-6 bg-gray-50 rounded-lg border border-gray-200">
               <Typography variant="body1" className="italic text-gray-600">
-              &#34Remember, we are social beings. It&apos;s human beings, to psychologically survive life we need to be with
+              &#34;Remember, we are social beings. It&apos;s human beings, to psychologically survive life we need to be with
                 other people, share pains and challenges. It is sense of purpose and meaning.&#34 - Barbara De Angelis
               </Typography>
             </Box>
