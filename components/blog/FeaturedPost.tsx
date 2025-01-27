@@ -2,6 +2,7 @@ import React from "react"
 import SearchBar from "./SearchBar"
 import { Typography, Box, Chip, Stack } from "@mui/material"
 import Image from "next/image"
+import Link from "next/link"
 
 const FeaturedPost = () => {
     return (
@@ -34,7 +35,8 @@ const FeaturedPost = () => {
                                     spacing={4}
                                     alignItems="center"
                                     >
-                                    <div className='text-[#7250E2] p-1 bg-[#7250e224]'>
+                                    <div className='text-[#7250E2] p-1 
+                                '>
                                         <Chip label={index === 0 ? "News & Insights" : "Women's Health"}
                                         />
                                     </div>
@@ -57,7 +59,9 @@ const FeaturedPost = () => {
                                 <Chip label="Read Post" variant="outlined"  clickable sx={{ alignSelf: "flex-start" }} />
                                 </div> */}
                                 <div className='text-[#20BEB8] border border-solid border-[#20BEB8] bg-white p-1 px-3 w-fit rounded-full'>
+                                    <Link href='/blog/post'>
                                     Read Post
+                                    </Link>
                                 </div>
                             </Stack>
                         </Stack>

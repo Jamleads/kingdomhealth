@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import { Typography, Box, Chip, Stack } from "@mui/material"
 import Image from "next/image"
 import Pagination from "./Pagination"
+import Link from "next/link"
 
 const LatestPost = () => {
   const [currentPage, setCurrentPage] = useState(1)
@@ -66,7 +67,9 @@ const LatestPost = () => {
             <Typography variant="body2" color="text.secondary">
               {post.excerpt}
             </Typography>
+            <Link href='/blog/category'>                        
             <Chip label="Read Post" variant="outlined" color="primary" clickable sx={{ alignSelf: "flex-start" }} />
+             </Link>
           </Stack>
         ))}
       </Stack>
