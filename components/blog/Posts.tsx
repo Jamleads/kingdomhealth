@@ -45,7 +45,7 @@ const Posts = () => {
           <Box className="prose prose-lg max-w-none">
             <Typography variant="body1" className="text-gray-600 mb-6 leading-relaxed">
               Mental health is just as important as physical health. Just like you would see a doctor if you were
-              feeling physically ill, it's important to seek professional help if you are struggling with your mental
+              feeling physically ill, it&apos;s important to seek professional help if you are struggling with your mental
               health.
             </Typography>
 
@@ -54,11 +54,11 @@ const Posts = () => {
             </Typography>
             <Typography variant="body1" className="text-gray-600 mb-6 leading-relaxed">
               Mental health warning signs can vary from person to person, but there are some common changes that could
-              indicate a problem. Mental health challenges may also present differently depending on the person's age.
+              indicate a problem. Mental health challenges may also present differently depending on the person&apos;s age.
             </Typography>
 
             <Typography variant="body1" className="text-gray-600 mb-6 leading-relaxed">
-              If you are experiencing any of the following changes, it's important to talk to a doctor or mental health
+              If you are experiencing any of the following changes, it&apos;s important to talk to a doctor or mental health
               professional:
             </Typography>
 
@@ -80,8 +80,8 @@ const Posts = () => {
 
             <Box className="my-8 p-6 bg-gray-50 rounded-lg border border-gray-200">
               <Typography variant="body1" className="italic text-gray-600">
-                "Remember, we are social beings. It's human beings, to psychologically survive life we need to be with
-                other people, share pains and challenges. It is sense of purpose and meaning." - Barbara De Angelis
+              &#34Remember, we are social beings. It&apos;s human beings, to psychologically survive life we need to be with
+                other people, share pains and challenges. It is sense of purpose and meaning.&#34 - Barbara De Angelis
               </Typography>
             </Box>
           </Box>
