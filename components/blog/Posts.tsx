@@ -23,7 +23,7 @@ const Posts = () => {
                 width: "fit-content",
               }}
             />
-            <Typography variant="h1" className="text-3xl md:text-4xl font-bold">
+            <Typography variant="h3" className="text-2xl md:text-4xl font-bold">
               Mental Health Warning Signs: When to Seek Professional Help
             </Typography>
             <Typography variant="body2" color="text.secondary">
@@ -68,7 +68,7 @@ const Posts = () => {
               <li>Physical changes: Headaches, stomachaches, or other unexplained physical symptoms</li>
             </ul>
 
-            <Typography variant="h2" className="text-2xl font-bold mt-8 mb-4">
+            <Typography variant="h3" className="text-2xl font-bold mt-8 mb-4">
               Warning Signs by Condition
             </Typography>
             <Typography variant="body1" className="text-gray-600 mb-6 leading-relaxed">
@@ -108,7 +108,7 @@ const Posts = () => {
 
           {/* Related Posts */}
           <Box>
-            <Typography variant="h2" className="text-2xl font-bold mb-6">
+            <Typography variant="h3" className="text-2xl font-bold mb-6">
               More posts
             </Typography>
             <Stack direction={{ xs: "column", md: "row" }} spacing={4}>
