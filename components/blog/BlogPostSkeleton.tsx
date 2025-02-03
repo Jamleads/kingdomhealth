@@ -10,7 +10,8 @@ export function BlogPostSkeleton() {
           <Skeleton variant="text" width={120} />
         </Stack>
         <Skeleton variant="text" sx={{ fontSize: "1.5rem" }} />
-        <Skeleton variant="text" sx={{ fontSize: "1rem" }} count={2} />
+        <Skeleton variant="text" sx={{ fontSize: "1rem" }}  />
+        <Skeleton variant="text" sx={{ fontSize: "1rem" }}  />
         <Skeleton variant="rounded" width={100} height={36} />
       </Stack>
     </Stack>
