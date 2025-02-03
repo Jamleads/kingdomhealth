@@ -18,6 +18,7 @@ import {
   useTheme,
 } from "@mui/material"
 import { Search as SearchIcon } from "@mui/icons-material"
+import { useRouter } from "next/navigation"
 
 // Mock data for blog categories
 const blogCategories = ["Technology", "Travel", "Food", "Lifestyle", "Fashion", "Health"]
@@ -26,9 +27,11 @@ const SearchBar: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("")
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down("md"))
+  const router = useRouter();
 
   const handleCategoryChange = (event: SelectChangeEvent) => {
     setSelectedCategory(event.target.value as string)
+    router.push('/blog/category')
   }
 
   return (
