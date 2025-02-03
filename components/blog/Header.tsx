@@ -4,7 +4,9 @@ import React from "react"
 const Header = () => {
   return (
     <Stack direction={{ xs: "column", md: "row" }} spacing={2} alignItems={{ xs: "flex-start", md: "center" }}>
-      <Typography variant="h4" component="div" className="font-semibold" sx={{ flex: { md: "0 0 33%" } }}>
+      <Typography variant="h4" component="div" className="font-semibold" sx={{ flex: { md: "0 0 33%" } }}
+      justifyContent={{md:'start', xs:'center'}}
+      >
         News & Insights
       </Typography>
       <Typography variant="body1" className="font-extralight" sx={{ flex: { md: "0 0 67%" } }}>

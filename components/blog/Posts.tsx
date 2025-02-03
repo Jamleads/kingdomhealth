@@ -187,3 +187,20 @@ const relatedPosts = [
 
 export default Posts
 
+// query MyQuery {
+//   post(
+//     where: {slug: "mental-health-warning-signs-when-to-seek-professional-help-general-health"}
+//   ) {
+//     id
+//     excerpt
+//     featured
+//     featuredImage {
+//       url
+//     }
+//     category
+//     createdAt
+//     slug
+//     quote
+//     title
+//   }
+// }
