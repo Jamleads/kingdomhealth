@@ -107,9 +107,9 @@ const BlogCategory = () => {
           <Grid container spacing={4}>
             {Object.entries(groupedPosts).map(([category, posts]) => (
               <Grid item xs={12} key={category}>
-                <Typography variant="h2" className="text-2xl font-semibold mb-4">
+                <Box className="text-2xl xs:text-xl font-semibold mb-4">
                   {category}
-                </Typography>
+                </Box>
                 <Grid container spacing={3}>
                   {posts.map((post) => (
                     <Grid item xs={12} md={6} lg={4} key={post.id}>
