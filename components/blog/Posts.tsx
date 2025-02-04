@@ -59,7 +59,7 @@ const Posts = () => {
 
             <Typography variant="body1" className="text-gray-600 mb-6 leading-relaxed">
               If you are experiencing any of the following changes, it&apos;s important to talk to a doctor or mental health
-              professional:
+              professional:jfolrjfoiijlvnffojboooorr
             </Typography>
 
             <ul className="list-disc pl-6 mb-6">
