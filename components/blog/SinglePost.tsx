@@ -133,9 +133,9 @@ const SinglePost: React.FC<SinglePostProps> = ({ slug }) => {
           {/* Related Posts */}
           {relatedPosts.length > 0 && (
             <Box>
-              <Typography variant="h3" className="text-2xl font-bold mb-6">
+              <Box  className="text-2xl xs:text-xl font-bold mb-6">
                 More posts
-              </Typography>
+              </Box>
               <Stack direction={{ xs: "column", md: "row" }} spacing={4}>
                 {relatedPosts.map((relatedPost) => (
                   <RelatedPostCard key={relatedPost.id} {...relatedPost} />
