@@ -31,7 +31,7 @@ const RelatedPostCard: React.FC<Post> = ({ title, excerpt, category, createdAt, 
       <Typography variant="h6" className="font-semibold">
         {title}
       </Typography>
-      <Link href={`/blog/${slug}`} passHref>
+      <Link href={`/blog/post/${slug}`} passHref>
         <Chip
           label="Read Post"
           variant="outlined"
