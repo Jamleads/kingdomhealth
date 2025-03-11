@@ -7,7 +7,8 @@ const nextConfig = {
       },
       reactStrictMode: true,
   images: {
-    domains: ['ap-south-1.graphassets.com'],
+    domains: ['ap-south-1.graphassets.com',  "kingdomhealth.vercel.app"],
+    
   },
     //   images: {
     //     remotePatterns: [ 
