@@ -6,10 +6,8 @@ interface PostPageProps {
   params: { slug: string };
 }
 
-// Generate dynamic metadata for SEO and social sharing
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
   const post = await getPostBySlug(params.slug);
-  console.log("Fetched Post:", post); // Debugging log
 
   if (!post) {
     return {
@@ -18,19 +16,20 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     };
   }
 
-  const imageUrl = post.featuredImage?.url ?? "/fallback-image.jpg"; // Ensure valid image
+  const baseUrl = "https://kingdomhealth.vercel.app"; // Change this to your actual domain
+  const imageUrl = post.featuredImage?.url ? post.featuredImage.url : `${baseUrl}/default-og-image.jpg`;
 
   return {
     title: post.title,
-    description: post.excerpt || "Read more about this article.",
+    description: post.excerpt || "Read this article on our blog.",
     openGraph: {
       title: post.title,
       description: post.excerpt || "Read this article on our blog.",
-      url: `https://kingdomhealth.vercel.app/blog/post/${params.slug}`,
+      url: `${baseUrl}/blog/post/${params.slug}`,
       type: "article",
       images: [
         {
-          url: imageUrl,
+          url: imageUrl, // Make sure this is a full URL
           width: 1200,
           height: 630,
           alt: post.title,
@@ -46,22 +45,11 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   };
 }
 
-// Page Component
 export default async function PostPage({ params }: PostPageProps) {
-  const post = await getPostBySlug(params.slug);
-  
-  if (!post) {
-    return (
-      <main className="flex flex-col items-center justify-center min-h-screen text-center">
-        <h1 className="text-3xl font-bold">Post Not Found</h1>
-        <p>The requested post could not be found. Please check the URL or browse other articles.</p>
-      </main>
-    );
-  }
-
   return (
     <main className="flex flex-col">
       <SinglePost slug={params.slug} />
     </main>
   );
 }
+
