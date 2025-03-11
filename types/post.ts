@@ -1,6 +1,6 @@
 export interface Post {
     id: string
-    category: string
+    category?: string
     excerpt?: string
     featured?: boolean
     slug: string
@@ -25,7 +25,7 @@ export interface Post {
   export interface Post {
   id: string;
   title: string;
-  content: {
+  content?: {
     html: string;
   };
   featuredImage?: {
