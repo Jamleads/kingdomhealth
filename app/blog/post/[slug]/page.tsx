@@ -9,7 +9,7 @@ interface PostPageProps {
 // Generate dynamic metadata for SEO and social sharing
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
   const post = await getPostBySlug(params.slug);
-  // console.log("post", post)
+  console.log("Fetched Post:", post); // Debugging log
 
   if (!post) {
     return {
@@ -17,6 +17,8 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       description: "The requested post could not be found.",
     };
   }
+
+  const imageUrl = post.featuredImage?.url ?? "/fallback-image.jpg"; // Ensure valid image
 
   return {
     title: post.title,
@@ -28,7 +30,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       type: "article",
       images: [
         {
-          url: post.featuredImage?.url || "/img2.png.jpg",
+          url: imageUrl,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -39,41 +41,27 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt || "Check out this post!",
-      images: [post.featuredImage?.url || "/img2.png"],
+      images: [imageUrl],
     },
   };
 }
 
 // Page Component
 export default async function PostPage({ params }: PostPageProps) {
+  const post = await getPostBySlug(params.slug);
+  
+  if (!post) {
+    return (
+      <main className="flex flex-col items-center justify-center min-h-screen text-center">
+        <h1 className="text-3xl font-bold">Post Not Found</h1>
+        <p>The requested post could not be found. Please check the URL or browse other articles.</p>
+      </main>
+    );
+  }
+
   return (
     <main className="flex flex-col">
-      <SinglePost slug ={params.slug} />
+      <SinglePost slug={params.slug} />
     </main>
   );
 }
-
-// import type React from "react"
-// import { Container, Stack } from "@mui/material"
-// import SinglePost from "@/components/blog/SinglePost"
-
-// // const PostPage: React.FC = () => {
-// //   const router = useRouter()
-// //   const { slug } = router.query
-
-// //   return <div>{slug && <SinglePost slug={slug as string} />}</div>
-// // }
-
-// // export default PostPage
-
-// export default async function PostPage({ params }: { params: { slug: string } }) {
-//   return (
-//     <main className="flex flex-col ">
-//     <Container maxWidth="lg" className="py-16">
-//       <Stack spacing={4}>
-//          {params.slug && <SinglePost slug={params.slug as string} />}
-//         </Stack>
-//         </Container>
-//       </main>
-//   )
-// }
