@@ -24,13 +24,19 @@ export function Nav() {
         <Container maxWidth="lg">
           <div className="flex items-center justify-between py-4">
             <Link href="/" className="flex items-center">
-              <Image
-                src="/assets/kingdomhealth_logo.svg"
-                alt="MediCare Logo"
-                width={150}
-                height={40}
-                className="h-10 w-auto"
-              />
+              <div className="flex flex-row items-center justify-center space-x-1">
+                <Image
+                  src="/king.jpeg"
+                  alt="MediCare Logo"
+                  width={150}
+                  height={40}
+                  className="h-10 w-auto"
+                />
+                <div className="text-lg font-semibold">
+                  KHealth
+                </div>
+              </div>
+
             </Link>
 
             <nav className="hidden md:flex items-center gap-8">
