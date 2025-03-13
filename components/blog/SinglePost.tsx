@@ -1,52 +1,89 @@
-"use client"
-import { useEffect, useState } from "react"
-import type React from "react"
+"use client";
+import { useEffect, useState } from "react";
+import type React from "react";
 
-import { Container, Typography, Stack, Box, Chip, Divider, useMediaQuery, useTheme } from "@mui/material"
-import Image from "next/image"
-import { Facebook, Twitter, LinkedIn } from "@mui/icons-material"
-import IconButton from "@/components/blog/icon-button"
-import RelatedPostCard from "@/components/blog/RelatedPostCard"
-import { getPostDetails, getSimilarPosts } from "@/lib/graphql-api"
-import SinglePostSkeleton from "@/components/blog/SinglePostSkeleton"
-import type { Post } from "@/types/post"
+import {
+  Container,
+  Typography,
+  Stack,
+  Box,
+  Chip,
+  Divider,
+  useMediaQuery,
+  useTheme,
+  SvgIcon,
+} from "@mui/material";
+import Image from "next/image";
+import { Facebook, LinkedIn } from "@mui/icons-material";
+import IconButton from "@/components/blog/icon-button";
+import RelatedPostCard from "@/components/blog/RelatedPostCard";
+import { getPostDetails, getSimilarPosts } from "@/lib/graphql-api";
+import SinglePostSkeleton from "@/components/blog/SinglePostSkeleton";
+import type { Post } from "@/types/post";
+
+// Custom X (Twitter) Icon
+const XIcon = (props: any) => (
+  <SvgIcon {...props}>
+    <path
+      d="M17.447 2H20.5l-7.357 8.418L21 22h-5.02l-5.434-6.46L5.5 22H2.5l7.81-8.925L3 2h5.02l4.85 5.874L17.447 2Z"
+      fill="currentColor"
+    />
+  </SvgIcon>
+);
 
 interface SinglePostProps {
-  slug: string
+  slug: string;
 }
 
 const SinglePost: React.FC<SinglePostProps> = ({ slug }) => {
-  const [post, setPost] = useState<Post | null>(null)
-  const [relatedPosts, setRelatedPosts] = useState<Post[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const [post, setPost] = useState<Post | null>(null);
+  const [relatedPosts, setRelatedPosts] = useState<Post[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [url, setUrl] = useState("");
 
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
-  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"))
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setUrl(window.location.href); // Ensure we get the current page URL
+    }
+  }, []);
+
+// Function to copy content to clipboard
+const copyToClipboard = (text: string) => {
+  navigator.clipboard.writeText(text).then(() => {
+    console.log('copied');
+    // alert("Post content copied! Paste it in your social media post.");
+  }).catch(err => console.error("Failed to copy text: ", err));
+};
+
+
 
   useEffect(() => {
     const fetchPostData = async () => {
       try {
-        setLoading(true)
-        const postData = await getPostDetails(slug)
-        setPost(postData)
+        setLoading(true);
+        const postData = await getPostDetails(slug);
+        setPost(postData);
 
-        const similarPosts = await getSimilarPosts(slug, postData?.category || "")
-        setRelatedPosts(similarPosts?.slice(0, 3) || [])
+        const similarPosts = await getSimilarPosts(slug, postData?.category || "");
+        setRelatedPosts(similarPosts?.slice(0, 3) || []);
       } catch (err) {
-        setError("Failed to load post data")
-        console.error("Error fetching post data:", err)
+        setError("Failed to load post data");
+        console.error("Error fetching post data:", err);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
-    }
+    };
 
-    fetchPostData()
-  }, [slug])
+    fetchPostData();
+  }, [slug]);
 
   if (loading) {
-    return <SinglePostSkeleton />
+    return <SinglePostSkeleton />;
   }
 
   if (error || !post) {
@@ -54,8 +91,33 @@ const SinglePost: React.FC<SinglePostProps> = ({ slug }) => {
       <Container maxWidth="lg" sx={{ py: { xs: 3, md: 8 } }}>
         <Typography color="error">{error || "Post not found"}</Typography>
       </Container>
-    )
+    );
   }
+
+  // Share on Facebook
+const shareOnFacebook = () => {
+  const textToShare = `${post.title}\nRead more: ${url}`;
+  copyToClipboard(textToShare);
+  const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+  window.open(facebookUrl, "_blank", "width=600,height=400");
+};
+
+// Share on Twitter (X)
+const shareOnTwitter = () => {
+  const textToShare = `${post.title}\nRead more: ${url}`;
+  copyToClipboard(textToShare);
+  const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(post.title)}`;
+  window.open(twitterUrl, "_blank");
+};
+
+// Share on LinkedIn
+const shareOnLinkedIn = () => {
+  const textToShare = `${post.title}\nRead more: ${url}`;
+  copyToClipboard(textToShare);
+  const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+  window.open(linkedInUrl, "_blank");
+};
+
 
   return (
     <main className="min-h-screen bg-white">
@@ -104,7 +166,6 @@ const SinglePost: React.FC<SinglePostProps> = ({ slug }) => {
           {/* Article Content */}
           <Box className="prose prose-sm sm:prose lg:prose-lg max-w-none">
             <div dangerouslySetInnerHTML={{ __html: post.content?.html || "" }} className="blog-content" />
-
             {post.quote && (
               <Box className="my-6 sm:my-8 p-4 sm:p-6 bg-gray-50 rounded-lg border border-gray-200">
                 <Typography variant="body2" className="italic text-gray-600">
@@ -120,13 +181,13 @@ const SinglePost: React.FC<SinglePostProps> = ({ slug }) => {
               Share this article:
             </Typography>
             <Stack direction="row" spacing={1}>
-              <IconButton className="text-[#1877F2] hover:bg-[#1877F2]/10">
+              <IconButton className="text-[#1877F2] hover:bg-[#1877F2]/10" onClick={shareOnFacebook}>
                 <Facebook fontSize={isMobile ? "small" : "medium"} />
               </IconButton>
-              <IconButton className="text-[#1DA1F2] hover:bg-[#1DA1F2]/10">
-                <Twitter fontSize={isMobile ? "small" : "medium"} />
+              <IconButton className="text-[#1DA1F2] hover:bg-[#1DA1F2]/10" onClick={shareOnTwitter}>
+                <XIcon fontSize={isMobile ? "small" : "medium"} />
               </IconButton>
-              <IconButton className="text-[#0A66C2] hover:bg-[#0A66C2]/10">
+              <IconButton className="text-[#0A66C2] hover:bg-[#0A66C2]/10" onClick={shareOnLinkedIn}>
                 <LinkedIn fontSize={isMobile ? "small" : "medium"} />
               </IconButton>
             </Stack>
@@ -150,10 +211,11 @@ const SinglePost: React.FC<SinglePostProps> = ({ slug }) => {
         </Stack>
       </Container>
     </main>
-  )
-}
+  );
+};
 
-export default SinglePost
+export default SinglePost;
+
 
 // "use client";
 // import { useEffect, useState } from "react";
