@@ -10,9 +10,9 @@ export function Footer() {
         <Container maxWidth="lg">
           <div className="gridmd:grid-cols- md:flex justify-between gap-8">
             <div className="md:w-1/3 md:border-b-[1px] border-[#94A3B8]">
-              <div className="flex flex-row items-center justify-center space-x-1">
+              <div className="flex flex-row items-center justify-start space-x-1">
                 <Image
-                  src="/king.jpeg"
+                  src="/kingnobg.png"
                   alt="MediCare Logo"
                   width={150}
                   height={40}
