@@ -10,13 +10,18 @@ export function Footer() {
         <Container maxWidth="lg">
           <div className="gridmd:grid-cols- md:flex justify-between gap-8">
             <div className="md:w-1/3 md:border-b-[1px] border-[#94A3B8]">
-              <Image
-                src="/assets/kingdomhealth_logo2.svg"
-                alt="MediCare Logo"
-                width={150}
-                height={40}
-                className="h-10 w-auto mb-4"
-              />
+              <div className="flex flex-row items-center justify-center space-x-1">
+                <Image
+                  src="/king.jpeg"
+                  alt="MediCare Logo"
+                  width={150}
+                  height={40}
+                  className="h-10 w-auto"
+                />
+                <div className="text-lg font-semibold">
+                  KHealth
+                </div>
+              </div>
               <Typography variant="body2" className="text-[#94A3B8]">
                 A personal healthcare companion that brings together expert
                 medical care, convenience, and peace of mind — all in one secure
